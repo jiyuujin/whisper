@@ -1,0 +1,22 @@
+service: openai-whisper
+
+plugins:
+  - serverless-esbuild
+  - serverless-layers
+
+custom:
+  serverless-layers:
+    layersDeploymentBucket: openai-whisper-dev-lambda-layers-deploy
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  runtime: nodejs16.x
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: post

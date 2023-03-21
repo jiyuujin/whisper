@@ -1,0 +1,26 @@
+{
+  "name": "whisper",
+  "version": "1.0.0",
+  "description": "",
+  "author": "jiyuujin <jiyuujinunite@gmail.com>",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "node-fetch": "3.3.0",
+    "openai": "3.2.1"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "3.27.0",
+    "@types/aws-lambda": "8.10.111",
+    "@types/node": "18.14.4",
+    "aws-sdk": "2.1339.0",
+    "esbuild": "0.17.10",
+    "serverless": "3.28.1",
+    "serverless-esbuild": "1.39.0",
+    "serverless-layers": "2.6.1",
+    "typescript": "4.9.5"
+  },
+  "engines": {
+    "node": ">=16.18.0"
+  }
+}
