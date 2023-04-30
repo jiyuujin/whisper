@@ -6,9 +6,12 @@ import fetch from 'node-fetch'
 const OPENAI_AUDIO_TRANSCRIPTIONS_API = 'https://api.openai.com/v1/audio/transcriptions'
 const OPENAI_SECRET = ''
 
+// Model: whisper-1
+const OPENAI_MODEL = 'whisper-1'
+
 export const audioTranscriptions = async (file, object): Promise<string> => {
   const body = new FormData()
-  body.append('model', 'whisper-1')
+  body.append('model', OPENAI_MODEL)
   body.append('file', file, {
     contentType: object.ContentType,
     knownLength: object.ContentLength,
