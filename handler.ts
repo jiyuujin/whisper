@@ -3,8 +3,8 @@ import * as AWS from 'aws-sdk'
 import * as FormData from 'form-data'
 import fetch from 'node-fetch'
 
-const OPENAPI_AUDIO_TRANSCRIPTIONS_API = 'https://api.openai.com/v1/audio/transcriptions'
-const OPENAPI_SECRET = ''
+const OPENAI_AUDIO_TRANSCRIPTIONS_API = 'https://api.openai.com/v1/audio/transcriptions'
+const OPENAI_SECRET = ''
 
 export const audioTranscriptions = async (file, object): Promise<string> => {
   const body = new FormData()
@@ -15,11 +15,11 @@ export const audioTranscriptions = async (file, object): Promise<string> => {
     filename: file['Key'],
   })
 
-  const res = await fetch(OPENAPI_AUDIO_TRANSCRIPTIONS_API, {
+  const res = await fetch(OPENAI_AUDIO_TRANSCRIPTIONS_API, {
     method: 'POST',
     headers: {
       'Content-Type': 'multipart/form-data',
-      Authorization: `Bearer ${OPENAPI_SECRET}`,
+      Authorization: `Bearer ${OPENAI_SECRET}`,
     },
     body,
   })
